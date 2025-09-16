@@ -1,9 +1,10 @@
+import "./styles/globals.css";
+import "./index.css";
 
-  import "./styles/globals.css";
-  import "./index.css";
-  import { createRoot } from "react-dom/client";
-  import App from "./App.tsx";
-  import "./index.css";
+import { createRoot } from "react-dom/client";
+import App from "./App";
 
-  createRoot(document.getElementById("root")!).render(<App />);
-  
+const rootEl = document.getElementById("root");
+if (!rootEl) throw new Error('Missing <div id="root"> in index.html');
+
+createRoot(rootEl).render(<App />);
