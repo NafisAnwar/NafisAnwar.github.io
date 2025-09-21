@@ -67,9 +67,15 @@ export function Navigation() {
               </button>
             ))}
             <Button 
+              asChild
               size="sm"
               className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white px-6 transition-all duration-300"
             >
+              <a
+                href="/NafisAnwar__Software_Engineer_Resume_2025.pdf"  // in public/
+                target="_blank"
+                rel="noopener noreferrer"
+              >
               Resume
             </Button>
           </div>
@@ -100,9 +106,15 @@ export function Navigation() {
                 </button>
               ))}
               <Button 
+                asChild
                 size="sm"
                 className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white mt-2 transition-all duration-300"
               >
+                <a
+                  href="/NafisAnwar__Software_Engineer_Resume_2025.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                 Resume
               </Button>
             </div>
