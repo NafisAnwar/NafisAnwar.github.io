@@ -11,30 +11,33 @@ const projects = [
   {
     id: 1,
     title: "GritVM Web IDE",
-    description: "Compiled a C++ virtual machine to WebAssembly, enabling browser execution with real-time memory visualization and Monaco Editor support. Deployed full-stack on Vercel.",
+    description:
+      "Compiled a C++ virtual machine to WebAssembly, enabling browser execution with real-time memory visualization and Monaco Editor support. Deployed full-stack on Vercel.",
     image: gritVMImage,
     stack: ["C++", "WebAssembly", "React", "Monaco"],
-    liveUrl: "https://github.com/NafisAnwar/GritVMFullStack",
-    githubUrl: "https://github.com/NafisAnwar/GritVMFullStack"
+    liveUrl: "https://github.com/NafisAnwar/GritVMFullStack", // keep or replace with real demo URL
+    githubUrl: "https://github.com/NafisAnwar/GritVM_Interactive",
   },
   {
     id: 2,
     title: "RSA Educational Playground",
-    description: "Full-stack educational platform with integrated RSA crypto engine and ASP.NET Core backend. Achieved 30% faster operations with C# P/Invoke and automated testing.",
+    description:
+      "Full-stack educational platform with integrated RSA crypto engine and ASP.NET Core backend. Achieved 30% faster operations with C# P/Invoke and automated testing.",
     image: rsaImage,
     stack: ["C#", "ASP.NET", "React", "P/Invoke"],
     liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "https://github.com/NafisAnwar/RSACryptoFullStack",
   },
   {
     id: 3,
     title: "MediTrends Analytics",
-    description: "Advanced Reddit data analysis system processing 28k+ posts across 18 communities with semantic search using FAISS vector structures and NLP trend detection.",
+    description:
+      "Advanced Reddit data analysis system processing 28k+ posts across 18 communities with semantic search using FAISS vector structures and NLP trend detection.",
     image: mediTrendsImage,
     stack: ["Python", "FAISS", "TensorFlow", "PyTorch"],
     liveUrl: "#",
-    githubUrl: "#"
-  }
+    githubUrl: "https://github.com/NafisAnwar/MediTrends",
+  },
 ];
 
 export function ProjectsSection() {
@@ -51,8 +54,8 @@ export function ProjectsSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card 
-              key={project.id} 
+            <Card
+              key={project.id}
               className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-[#1A1A1A] overflow-hidden"
             >
               <div className="relative overflow-hidden">
@@ -63,50 +66,60 @@ export function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button size="sm" variant="secondary" className="p-2 bg-white/90 hover:bg-white">
-                    <ExternalLink className="w-4 h-4" />
+                  {/* Overlay: Live link */}
+                  <Button size="sm" variant="secondary" className="p-2 bg-white/90 hover:bg-white" asChild>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="Open live demo">
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
                   </Button>
-                  <Button size="sm" variant="secondary" className="p-2 bg-white/90 hover:bg-white">
-                    <Github className="w-4 h-4" />
+                  {/* Overlay: GitHub link */}
+                  <Button size="sm" variant="secondary" className="p-2 bg-white/90 hover:bg-white" asChild>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="Open source code">
+                      <Github className="w-4 h-4" />
+                    </a>
                   </Button>
                 </div>
               </div>
-              
+
               <CardContent className="p-6">
                 <h3 className="text-xl mb-3 text-black group-hover:text-[#0A66C2] transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
+                <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.stack.map((tech) => (
-                    <Badge 
-                      key={tech} 
-                      variant="secondary" 
+                    <Badge
+                      key={tech}
+                      variant="secondary"
                       className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF] transition-colors duration-300"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-3 pt-4 border-t border-gray-200">
-                  <Button 
-                    size="sm" 
+                  <Button
+                    size="sm"
                     className="flex-1 bg-[#1E90FF] hover:bg-[#0A66C2] text-white transition-all duration-300"
+                    asChild
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
                   </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline" 
+                  <Button
+                    size="sm"
+                    variant="outline"
                     className="flex-1 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300"
+                    asChild
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </a>
                   </Button>
                 </div>
               </CardContent>

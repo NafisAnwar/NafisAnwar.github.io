@@ -1,7 +1,14 @@
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import type { MouseEvent } from "react";
 
 export function HeroSection() {
+  const handleContactClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative min-h-screen bg-black text-white flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -16,7 +23,10 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-white to-[#0A66C2] bg-clip-text text-transparent uppercase tracking-wider" style={{fontFamily: '"Arial Black", "Helvetica", sans-serif'}}>
+        <h1
+          className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-white to-[#0A66C2] bg-clip-text text-transparent uppercase tracking-wider"
+          style={{ fontFamily: '"Arial Black", "Helvetica", sans-serif' }}
+        >
           Nafis Anwar
         </h1>
         <p className="text-xl md:text-2xl mb-4 text-gray-300">
@@ -25,19 +35,30 @@ export function HeroSection() {
         <p className="text-lg md:text-xl mb-8 text-gray-400 max-w-2xl mx-auto">
           Strong foundation in backend/frontend development with C++, Python, and Java. Experienced in scalable systems, debugging, and real-time robotics. Eager to deliver impactful results as a Backend Engineer.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            size="lg" 
-            className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white border-none px-8 py-3 transition-all duration-300 transform hover:scale-105"
-          >
-            View Resume
-          </Button>
-          <Button 
+          <Button
             size="lg"
             className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white border-none px-8 py-3 transition-all duration-300 transform hover:scale-105"
+            asChild
           >
-            Contact Me
+            <a
+              href="/NafisAnwar__Software_Engineer_Resume_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Resume
+            </a>
+          </Button>
+
+          <Button
+            size="lg"
+            className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white border-none px-8 py-3 transition-all duration-300 transform hover:scale-105"
+            asChild
+          >
+            <a href="#contact" onClick={handleContactClick}>
+              Contact Me
+            </a>
           </Button>
         </div>
       </div>
