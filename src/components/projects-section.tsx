@@ -3,11 +3,20 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ExternalLink, Github } from "lucide-react";
+
+// existing images (from your figma assets)
 import gritVMImage from "figma:asset/c377cdd31d9f35a7725e08a8229b80a8d86fbbae.png";
 import rsaImage from "figma:asset/87ff3fb48729f4d511ccb9ba1316e6f981da3c95.png";
 import mediTrendsImage from "figma:asset/3b96e6129e9cfb76e2bfab26d4cd2bcd8bda88df.png";
 
+// NEW images — add these files to: src/assets/
+import spotifyImg from "@/assets/spotify-voice-assistant.png";
+import numberTheoryImg from "@/assets/number-theory-rsa-tools.png";
+import ytSummarizerImg from "@/assets/youtube-summarizer.png";
+import triviaNightImg from "@/assets/trivia-night.png";
+
 const projects = [
+  // --- existing ---
   {
     id: 1,
     title: "GritVM Web IDE",
@@ -15,7 +24,7 @@ const projects = [
       "Compiled a C++ virtual machine to WebAssembly, enabling browser execution with real-time memory visualization and Monaco Editor support. Deployed full-stack on Vercel.",
     image: gritVMImage,
     stack: ["C++", "WebAssembly", "React", "Monaco"],
-    liveUrl: "https://github.com/NafisAnwar/GritVMFullStack", // (kept for reference)
+    liveUrl: "https://github.com/NafisAnwar/GritVMFullStack", // kept for overlay icon
     githubUrl: "https://github.com/NafisAnwar/GritVM_Interactive",
   },
   {
@@ -37,6 +46,48 @@ const projects = [
     stack: ["Python", "FAISS", "TensorFlow", "PyTorch"],
     liveUrl: "#",
     githubUrl: "https://github.com/NafisAnwar/MediTrends",
+  },
+
+  // --- new ---
+  {
+    id: 4,
+    title: "Spotify Voice Assistant",
+    description:
+      "Hands-free Spotify control using voice commands. Integrates speech recognition with Spotify Web API for search, playback and playlist actions.",
+    image: spotifyImg,
+    stack: ["Python", "Speech", "Spotify API", "Flask"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/NafisAnwar/spotify-voice-assistant",
+  },
+  {
+    id: 5,
+    title: "Number Theory & RSA Tools",
+    description:
+      "Practical toolkit for number-theory operations and RSA workflows—key generation, encryption/decryption, and utilities for modular arithmetic.",
+    image: numberTheoryImg,
+    stack: ["Python", "RSA", "Number Theory", "CLI"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/NafisAnwar/NumberTheory-RSA-Tools",
+  },
+  {
+    id: 6,
+    title: "YouTube Summarizer",
+    description:
+      "Fetches transcripts and produces concise summaries for YouTube videos using NLP pipelines, making long-form content quickly digestible.",
+    image: ytSummarizerImg,
+    stack: ["Python", "NLP", "YouTube API"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/NafisAnwar/YoutubeSummarizer",
+  },
+  {
+    id: 7,
+    title: "Trivia Night",
+    description:
+      "Real-time trivia game for the web with lobby/rooms, timed questions, and scoreboards—built for fast gameplay and easy hosting.",
+    image: triviaNightImg,
+    stack: ["React", "Node", "Socket.io"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/NafisAnwar/TriviaNight",
   },
 ];
 
@@ -66,9 +117,9 @@ export function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {/* Overlay: (kept) external + GitHub icons */}
+                  {/* Overlay icons kept: external + GitHub */}
                   <Button size="sm" variant="secondary" className="p-2 bg-white/90 hover:bg-white" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="Open live demo">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="Open live link">
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
