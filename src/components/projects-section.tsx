@@ -15,7 +15,7 @@ const projects = [
       "Compiled a C++ virtual machine to WebAssembly, enabling browser execution with real-time memory visualization and Monaco Editor support. Deployed full-stack on Vercel.",
     image: gritVMImage,
     stack: ["C++", "WebAssembly", "React", "Monaco"],
-    liveUrl: "https://github.com/NafisAnwar/GritVMFullStack", // keep or replace with real demo URL
+    liveUrl: "https://github.com/NafisAnwar/GritVMFullStack", // (kept for reference)
     githubUrl: "https://github.com/NafisAnwar/GritVM_Interactive",
   },
   {
@@ -66,13 +66,12 @@ export function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {/* Overlay: Live link */}
+                  {/* Overlay: (kept) external + GitHub icons */}
                   <Button size="sm" variant="secondary" className="p-2 bg-white/90 hover:bg-white" asChild>
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="Open live demo">
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
-                  {/* Overlay: GitHub link */}
                   <Button size="sm" variant="secondary" className="p-2 bg-white/90 hover:bg-white" asChild>
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="Open source code">
                       <Github className="w-4 h-4" />
@@ -99,21 +98,12 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-4 border-t border-gray-200">
-                  <Button
-                    size="sm"
-                    className="flex-1 bg-[#1E90FF] hover:bg-[#0A66C2] text-white transition-all duration-300"
-                    asChild
-                  >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
+                {/* Single centered, full-width Code button */}
+                <div className="pt-4 border-t border-gray-200">
                   <Button
                     size="sm"
                     variant="outline"
-                    className="flex-1 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300"
+                    className="w-full border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-all duration-300"
                     asChild
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
