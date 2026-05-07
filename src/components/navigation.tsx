@@ -24,8 +24,10 @@ export function Navigation() {
   const navItems = [
     { label: "About", id: "about" },
     { label: "Projects", id: "projects" },
+    { label: 'Research', id: 'research' },
     { label: "Skills", id: "skills" },
     { label: "Contact", id: "contact" },
+    
   ];
 
   return (
