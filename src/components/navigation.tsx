@@ -126,7 +126,7 @@ export function Navigation() {
                 className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white mt-2 transition-all duration-300"
               >
                 <a
-                  href="/NafisAnwar__Software_Engineer_Resume_2025.pdf"
+                  href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
