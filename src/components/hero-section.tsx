@@ -43,7 +43,7 @@ export function HeroSection() {
             asChild
           >
             <a
-              href="/NafisAnwar__Software_Engineer_Resume_2025.pdf"
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
