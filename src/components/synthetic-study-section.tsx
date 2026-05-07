@@ -1,7 +1,6 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Github, FileText } from "lucide-react";
 import syntheticPrevalenceImage from "../assets/synthetic-prevalence.png";
 
@@ -21,11 +20,12 @@ export function SyntheticStudySection() {
         </div>
 
         <Card className="border-[#1A1A1A] shadow-xl overflow-hidden">
-            <div className="relative bg-[#2F2F2F] flex items-start justify-center p-6">
-              <ImageWithFallback
+          <div className="grid lg:grid-cols-2">
+            <div className="relative bg-[#2F2F2F] flex items-center justify-center p-6">
+              <img
                 src={syntheticPrevalenceImage}
                 alt="Synthetic prevalence study poster"
-                className="w-full h-auto max-h-[620px] object-contain object-top"
+                className="w-full max-w-[520px] h-auto object-contain"
               />
             </div>
 
@@ -35,7 +35,8 @@ export function SyntheticStudySection() {
               </h3>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                This study investigates how <span className="font-medium">synthetic-like content</span>{" "}
+                This study investigates how{" "}
+                <span className="font-medium">synthetic-like content</span>{" "}
                 appears in online communities and how it relates to human interaction patterns. The
                 project combines structured data collection, text cleaning, manual labeling, and statistical
                 analysis to study comment behavior at scale while carefully framing results as observational
