@@ -48,8 +48,8 @@ export function AboutSection() {
                     <div className="text-sm text-gray-600">Graduation</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl text-[#0A66C2]">500+</div>
-                    <div className="text-sm text-gray-600">Developers Reached</div>
+                    <div className="text-2xl text-[#0A66C2]">5+</div>
+                    <div className="text-sm text-gray-600">Major Systems Built</div>
                   </div>
                 </div>
               </CardContent>
