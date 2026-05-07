@@ -10,7 +10,9 @@ export function SyntheticStudySection() {
     <section id="research" className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl text-black mb-4">Research & Applied Studies</h2>
+          <h2 className="text-4xl md:text-5xl text-black mb-4">
+            Research & Applied Studies
+          </h2>
           <div className="w-24 h-1 bg-[#0A66C2] mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             A featured study exploring synthetic-like content patterns and human interaction behavior
@@ -20,23 +22,25 @@ export function SyntheticStudySection() {
 
         <Card className="border-[#1A1A1A] shadow-xl overflow-hidden">
           <div className="grid lg:grid-cols-2">
-            <div className="relative">
+            <div className="relative bg-[#2F2F2F] flex items-center justify-center p-6">
               <ImageWithFallback
                 src={syntheticPrevalenceImage}
                 alt="Synthetic prevalence study poster"
-                className="w-full h-full object-cover"
+                className="w-full h-full max-h-[620px] object-contain"
               />
             </div>
 
             <CardContent className="p-8 lg:p-10 flex flex-col justify-center">
-              <h3 className="text-3xl text-black mb-4">Synthetic Content & Human Interaction Study</h3>
+              <h3 className="text-3xl text-black mb-4">
+                Synthetic Content & Human Interaction Study
+              </h3>
 
               <p className="text-gray-700 leading-relaxed mb-4">
-                This study investigates how <span className="font-medium">synthetic-like content</span>
-                appears in online communities and how it relates to human interaction patterns. The project
-                combines structured data collection, text cleaning, manual labeling, and statistical analysis
-                to study comment behavior at scale while carefully framing results as observational rather than
-                definitive proof of AI authorship.
+                This study investigates how <span className="font-medium">synthetic-like content</span>{" "}
+                appears in online communities and how it relates to human interaction patterns. The
+                project combines structured data collection, text cleaning, manual labeling, and statistical
+                analysis to study comment behavior at scale while carefully framing results as observational
+                rather than definitive proof of AI authorship.
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
@@ -47,13 +51,27 @@ export function SyntheticStudySection() {
               </p>
 
               <div className="flex flex-wrap gap-2 mb-6">
-                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">Python</Badge>
-                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">NLP</Badge>
-                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">Embeddings</Badge>
-                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">TF-IDF</Badge>
-                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">Logistic Regression</Badge>
-                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">Data Analysis</Badge>
-                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">Visualization</Badge>
+                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">
+                  Python
+                </Badge>
+                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">
+                  NLP
+                </Badge>
+                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">
+                  Embeddings
+                </Badge>
+                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">
+                  TF-IDF
+                </Badge>
+                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">
+                  Logistic Regression
+                </Badge>
+                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">
+                  Data Analysis
+                </Badge>
+                <Badge className="bg-[#1A1A1A] text-white hover:bg-[#1E90FF]">
+                  Visualization
+                </Badge>
               </div>
 
               <div className="grid sm:grid-cols-3 gap-4 mb-8">
@@ -61,13 +79,15 @@ export function SyntheticStudySection() {
                   <p className="text-2xl text-[#0A66C2] font-semibold">12</p>
                   <p className="text-sm text-gray-600">Week Study Window</p>
                 </div>
+
                 <div className="border border-gray-200 rounded-lg p-4 text-center">
-                  <p className="text-2xl text-[#0A66C2] font-semibold">NLP</p>
-                  <p className="text-sm text-gray-600">Classifier + Manual Review</p>
+                  <p className="text-2xl text-[#0A66C2] font-semibold">7,606</p>
+                  <p className="text-sm text-gray-600">Cleaned Comments</p>
                 </div>
+
                 <div className="border border-gray-200 rounded-lg p-4 text-center">
-                  <p className="text-2xl text-[#0A66C2] font-semibold">Obs.</p>
-                  <p className="text-sm text-gray-600">Interaction Analysis</p>
+                  <p className="text-2xl text-[#0A66C2] font-semibold">0.849</p>
+                  <p className="text-sm text-gray-600">Best ROC-AUC</p>
                 </div>
               </div>
 
@@ -87,11 +107,18 @@ export function SyntheticStudySection() {
                 </Button>
 
                 <Button
+                  asChild
                   variant="outline"
                   className="border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white px-6"
                 >
-                  <FileText className="w-4 h-4 mr-2" />
-                  Research Highlight
+                  <a
+                    href="/research/synthetic-content-human-interaction-paper.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FileText className="w-4 h-4 mr-2" />
+                    Research Highlight
+                  </a>
                 </Button>
               </div>
             </CardContent>
