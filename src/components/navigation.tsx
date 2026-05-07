@@ -25,6 +25,7 @@ export function Navigation() {
     { label: "About", id: "about" },
     { label: "Projects", id: "projects" },
     { label: 'Research', id: 'research' },
+    { label: "Experience", id: "experience" },
     { label: "Skills", id: "skills" },
     { label: "Contact", id: "contact" },
     
