@@ -21,12 +21,11 @@ export function SyntheticStudySection() {
         </div>
 
         <Card className="border-[#1A1A1A] shadow-xl overflow-hidden">
-          <div className="grid lg:grid-cols-2">
-            <div className="relative bg-[#2F2F2F] flex items-center justify-center p-6">
+            <div className="relative bg-[#2F2F2F] flex items-start justify-center p-6">
               <ImageWithFallback
                 src={syntheticPrevalenceImage}
                 alt="Synthetic prevalence study poster"
-                className="w-full h-full max-h-[620px] object-contain"
+                className="w-full h-auto max-h-[620px] object-contain object-top"
               />
             </div>
 
