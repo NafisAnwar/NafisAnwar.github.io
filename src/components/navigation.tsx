@@ -1,145 +1,111 @@
 import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
-import { Menu, X } from "lucide-react";
-import logoImage from "figma:asset/e6c2e8ab01f5fb35b778fa209203525417008c2e.png";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { m, useScroll, useSpring } from "motion/react";
+import { resume } from "./shared";
 
+const links = [
+  ["projects", "Work"],
+  ["research", "Research"],
+  ["about", "About"],
+  ["experience", "Experience"],
+] as const;
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-15% 0px -65% 0px" },
+    );
+    document
+      .querySelectorAll("main > section[id]")
+      .forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
-  const navItems = [
-    { label: "About", id: "about" },
-    { label: "Projects", id: "projects" },
-    { label: 'Research', id: 'research' },
-    { label: "Experience", id: "experience" },
-    { label: "Skills", id: "skills" },
-    { label: "Contact", id: "contact" },
-    
-  ];
-
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && open) {
+        setOpen(false);
+        document.getElementById("menu-toggle")?.focus();
+      }
+    };
+    const media = matchMedia("(min-width: 801px)");
+    const resize = () => {
+      if (media.matches) setOpen(false);
+    };
+    window.addEventListener("keydown", close);
+    media.addEventListener("change", resize);
+    return () => {
+      window.removeEventListener("keydown", close);
+      media.removeEventListener("change", resize);
+    };
+  }, [open]);
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-[#1A1A1A]/10"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="transition-all duration-300 hover:scale-105"
-            aria-label="Go to top"
-          >
-            <img
-              src={logoImage}
-              alt="Nafis Anwar Logo"
-              className="h-10 w-auto"
-              style={{ filter: isScrolled ? "invert(1)" : "invert(0)" }}
-            />
-          </button>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                asChild
-                className="transition-colors duration-300 hover:text-[#1E90FF]"
-                style={{ color: isScrolled ? "#000000" : "#ffffff" }}
-              >
-                <a
-                  href={`#${item.id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.id);
-                  }}
-                >
-                  {item.label}
-                </a>
-              </Button>
-            ))}
-
-            <Button
-              asChild
-              size="sm"
-              className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white px-6 transition-all duration-300"
+    <header className="site-header">
+      <div className="nav-shell">
+        <a
+          className="wordmark"
+          href="#home"
+          aria-label="Nafis Anwar, home"
+          onClick={() => setOpen(false)}
+        >
+          na<span className="brand-dot">.</span>
+          <span className="wordmark-name">NAFIS ANWAR</span>
+        </a>
+        <nav aria-label="Main navigation" className="desktop-nav">
+          {links.map(([id, label]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-current={active === id ? "location" : undefined}
             >
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume
-              </a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen((v) => !v)}
-            style={{ color: isScrolled ? "#000000" : "#ffffff" }}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </Button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white/95 backdrop-blur-md rounded-lg border border-[#1A1A1A]/10">
-            <div className="flex flex-col gap-4 px-4">
-              {navItems.map((item) => (
-                <Button key={item.id} variant="ghost" asChild>
-                  <a
-                    href={`#${item.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(item.id);
-                    }}
-                    className="text-left text-black hover:text-[#1E90FF] transition-colors duration-300 py-2"
-                  >
-                    {item.label}
-                  </a>
-                </Button>
-              ))}
-              <Button
-                asChild
-                size="sm"
-                className="bg-[#1E90FF] hover:bg-[#0A66C2] text-white mt-2 transition-all duration-300"
-              >
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Resume
-                </a>
-              </Button>
-            </div>
-          </div>
-        )}
+              {label}
+            </a>
+          ))}
+        </nav>
+        <a className="nav-contact" href="#contact">
+          Let’s talk <ArrowUpRight size={16} />
+        </a>
+        <button
+          id="menu-toggle"
+          className="icon-button mobile-toggle"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
       </div>
-    </nav>
+      {open && (
+        <nav
+          id="mobile-nav"
+          className="mobile-nav"
+          aria-label="Mobile navigation"
+        >
+          {[...links, ["contact", "Contact"]].map(([id, label]) => (
+            <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>
+              {label}
+              <ArrowUpRight size={18} />
+            </a>
+          ))}
+          <a
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            Résumé <ArrowUpRight size={18} />
+          </a>
+        </nav>
+      )}
+      <m.div className="reading-progress" style={{ scaleX: progress }} />
+    </header>
   );
 }

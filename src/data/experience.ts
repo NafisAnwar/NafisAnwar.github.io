@@ -1,0 +1,88 @@
+export const experiences = [
+  {
+    role: "Junior Undergraduate Researcher",
+    organization: "RARE Lab, University of South Florida",
+    location: "Tampa, FL",
+    date: "Dec 2025 - Mar 2026",
+    type: "Research",
+    tags: [
+      "Robotics",
+      "Unitree G1",
+      "Evaluation Pipelines",
+      "Sim-to-Real",
+      "ASAP Framework",
+    ],
+    bullets: [
+      "Operate and maintain the Unitree G1 humanoid robot by configuring power-on sequences, scripts, evaluation harnesses, logging, configuration management, benchmarking, and regression checks to support safe and reproducible research experiments.",
+      "Conducted literature reviews on sim-to-real transfer techniques including physics mismatch mitigation, reward shaping strategies, and delta-action policies, compiling findings into technical summaries to inform experimental design.",
+      "Analyzed research codebases, including the ASAP framework, to reproduce published results, trace training pipelines, identify policy learning and evaluation modules, and establish benchmarks for humanoid locomotion experiments.",
+    ],
+  },
+  {
+    role: "Resident Assistant",
+    organization: "Residential Education at USF",
+    location: "Tampa, FL",
+    date: "Aug 2025 - Present",
+    type: "Leadership",
+    tags: [
+      "ASP.NET Core",
+      "Excel Macros",
+      "Reporting Systems",
+      "Documentation",
+      "Community Support",
+    ],
+    bullets: [
+      "Built automated reporting and tracking systems for community metrics using Excel macros and ASP.NET Core; documented 18 conflict-resolution cases and 58 issue reports while supporting 500+ residents.",
+      "Fostered community engagement by organizing and facilitating 4 social and educational programs, averaging 20 attendees, and boosted floor participation by 36% for 34 residents within my community.",
+    ],
+  },
+  {
+    role: "Technical Marketing Lead",
+    organization: "Google Developer Student Club at USF",
+    location: "Tampa, FL",
+    date: "Jun 2025 - Present",
+    type: "Developer Community",
+    tags: [
+      "Technical Content",
+      "Developer Events",
+      "Documentation",
+      "Canva",
+      "Photoshop",
+    ],
+    bullets: [
+      "Designed graphics and created content for the GDSC Marketing Team, producing 52+ assets using Photoshop and Illustrator.",
+      "Reduced turnaround time from 4 days to 2 days by standardizing custom templates on Canva, improving team efficiency.",
+      "Created technical documentation and educational content for developer community events, managing a content pipeline serving 500+ developers while collaborating across teams on event planning and developer experience optimization.",
+    ],
+  },
+  {
+    role: "Lead Developer",
+    organization: "PATHFINDER Team, Engineering Lab at USF",
+    location: "Tampa, FL",
+    date: "Aug 2023 - Dec 2023",
+    type: "Embedded Systems",
+    tags: ["C", "Assembly", "Arduino", "Sensors", "Debugging"],
+    bullets: [
+      "Led a cross-functional team of 4 in designing and implementing an obstacle-avoiding robot, programming and testing C and Assembly code in Arduino IDE to synchronize servo motors with ultrasonic sensors.",
+      "Achieved a 60% improvement in real-time obstacle detection and avoidance through improved control logic and sensor coordination.",
+      "Enhanced system reliability by debugging with terminal tools, Serial Monitor, and a logic analyzer to resolve timing issues, reducing collisions by 95%.",
+    ],
+  },
+  {
+    role: "Human Resources Intern",
+    organization: "SQUARE International, Textiles Division",
+    location: "Dhaka, Bangladesh",
+    date: "Sep 2022 - Dec 2022",
+    type: "Operations",
+    tags: [
+      "Data Validation",
+      "Relational Databases",
+      "HCMS",
+      "Process Improvement",
+    ],
+    bullets: [
+      "Validated 250 employee records in Optic and HCMS systems by performing data migration and ensuring compliance with internal protocols.",
+      "Participated in developing an automated HR tracking system using a relational database, reducing reporting errors by 18%.",
+    ],
+  },
+];

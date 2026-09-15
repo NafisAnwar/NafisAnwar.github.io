@@ -1,18 +1,14 @@
-import "./styles/globals.css";
+import "./fonts.css";
+import "@fontsource/ibm-plex-mono/latin-400.css";
 import "./index.css";
-
+import "./now-what.css";
+import "./orbit-nodes.css";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 
-try {
-  const rootEl = document.getElementById("root");
-  if (!rootEl) throw new Error('Missing <div id="root"> in index.html');
-  console.log("[boot] mounting app…");
-  createRoot(rootEl).render(<App />);
-} catch (e) {
-  console.error("[boot] failed to mount:", e);
-  const pre = document.createElement("pre");
-  pre.style.padding = "16px";
-  pre.textContent = `Boot error: ${String(e)}`;
-  document.body.appendChild(pre);
-}
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);

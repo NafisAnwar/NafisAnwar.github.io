@@ -1,0 +1,218 @@
+.orbit-nodes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.orbit-node {
+  position: absolute;
+  pointer-events: auto;
+  max-width: 100%;
+}
+.orbit-node.is-open {
+  z-index: 5;
+}
+.orbit-node-trigger {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #33535b;
+  border-radius: 4px;
+  background: #101d23dc;
+  color: #b3d0d8;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px #0003;
+  font: 9px var(--mono);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+.orbit-node-trigger:hover,
+.orbit-node-trigger[aria-expanded="true"] {
+  border-color: #00b4d8;
+  background: #102a33ec;
+  color: #e1f8fc;
+}
+.orbit-node-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px #00b4d84d;
+  flex-shrink: 0;
+}
+.orbit-node-plus {
+  color: #74c6d7;
+  font-size: 15px;
+  line-height: 1;
+  margin-left: 3px;
+  transition: transform 0.2s;
+}
+.orbit-node-trigger[aria-expanded="true"] .orbit-node-plus {
+  transform: rotate(45deg);
+}
+.orbit-node-panel {
+  position: absolute;
+  top: calc(100% + 9px);
+  left: 0;
+  width: max-content;
+  max-width: 255px;
+  border: 1px solid #305965;
+  border-radius: 5px;
+  background: #10242cea;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 35px #0006;
+  color: #d2ebf2;
+  font: 11px/1.8 var(--mono);
+  letter-spacing: 0;
+  padding: 12px 15px;
+}
+.orbit-node-panel[hidden] {
+  display: none;
+}
+.orbit-node-panel::before {
+  content: "";
+  position: absolute;
+  inset: -11px 0 auto;
+  height: 11px;
+}
+.orbit-node-backend {
+  top: 26%;
+  right: 0;
+}
+.orbit-node-backend .orbit-node-panel {
+  left: auto;
+  right: 0;
+}
+.orbit-node-ai {
+  bottom: 23%;
+  left: 0;
+}
+.orbit-node-systems {
+  top: 12%;
+  left: 1%;
+}
+.orbit-node-software {
+  bottom: 0;
+  left: 35%;
+}
+.orbit-node-software::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 14px;
+  height: 32px;
+  border-left: 1px dashed #3a636f;
+  pointer-events: none;
+}
+.orbit-node-software .orbit-node-trigger {
+  background: #0c161dcc;
+  color: #9fbec9;
+  border-color: #29444e;
+}
+.orbit-node-software .orbit-node-panel {
+  top: auto;
+  bottom: calc(100% + 9px);
+}
+.orbit-node-software .orbit-node-panel::before {
+  inset: auto 0 -11px;
+}
+.orbit-node-software.is-open::before {
+  opacity: 0;
+}
+.hero-art {
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 800px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero-copy {
+    width: 100%;
+  }
+  .hero-art {
+    width: min(100%, 480px);
+    margin: 18px auto 24px;
+  }
+}
+@media (max-width: 1100px) {
+  .orbit-node-trigger {
+    font-size: 8px;
+    padding: 9px 10px;
+    gap: 7px;
+  }
+  .orbit-node-panel {
+    font-size: 10px;
+    max-width: 230px;
+  }
+  .orbit-node-software {
+    left: 28%;
+  }
+}
+@media (min-width: 581px) and (max-width: 800px) {
+  .orbit-node-systems {
+    top: 6%;
+    left: 8%;
+  }
+  .orbit-node-trigger {
+    font-size: 7px;
+    letter-spacing: 0;
+    gap: 5px;
+    padding: 8px;
+  }
+  .orbit-node-panel {
+    max-width: 210px;
+    font-size: 10px;
+  }
+  .orbit-node-software {
+    left: 25%;
+    bottom: -5%;
+  }
+}
+@media (max-width: 580px) {
+  .orbit-node-systems {
+    top: 10%;
+    left: 0;
+  }
+  .orbit-node-trigger {
+    font-size: 8px;
+    gap: 7px;
+    letter-spacing: 0.1px;
+    padding: 9px 10px;
+  }
+  .orbit-node-panel {
+    font-size: 10px;
+    max-width: 235px;
+    padding: 10px 12px;
+  }
+  .orbit-node-software {
+    left: auto;
+    right: 0;
+    bottom: -1%;
+  }
+  .orbit-node-software .orbit-node-panel {
+    left: auto;
+    right: 0;
+  }
+  .sculpture-footer {
+    bottom: 0;
+    left: 3%;
+    right: auto;
+  }
+  .orbit-node-backend {
+    top: 29%;
+  }
+  .orbit-node-ai {
+    bottom: 24%;
+  }
+  .hero-art {
+    margin-bottom: 16px;
+  }
+}
