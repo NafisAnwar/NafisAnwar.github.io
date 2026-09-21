@@ -1,8 +1,9 @@
+import { ContactPanel } from "./contact-panel";
 import { OrbitNodes } from "./orbit-nodes";
 import { useEffect, useRef, useState } from "react";
 import { animate, m, useInView, useMotionValue, useSpring } from "motion/react";
-import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
-import { resume, useMotionPreference } from "./shared";
+import { ArrowDown, Pause, Play } from "lucide-react";
+import { useMotionPreference } from "./shared";
 
 function SystemsSculpture() {
   const ref = useRef<HTMLDivElement>(null);
@@ -189,19 +190,6 @@ export function HeroSection() {
               I’m <strong>Nafis Anwar.</strong> I build the systems behind the
               experience - from low-level code to intelligent applications.
             </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#projects">
-                Explore my work <ArrowDown size={17} />
-              </a>
-              <a
-                className="button button-quiet"
-                href={resume}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View résumé <ArrowUpRight size={17} />
-              </a>
-            </div>
             <p className="hero-location mono">
               BASED IN TAMPA, FL <span>/</span> CS @ UNIVERSITY OF SOUTH FLORIDA
             </p>
@@ -215,6 +203,9 @@ export function HeroSection() {
         >
           <SystemsSculpture />
         </m.div>
+      </div>
+      <div className="hero-contact-panel">
+        <ContactPanel label="Quick resume and contact links" />
       </div>
       <div className="hero-bottom">
         <span className="mono">CURIOUS BY NATURE. PRECISE BY DESIGN.</span>

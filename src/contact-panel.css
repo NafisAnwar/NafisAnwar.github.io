@@ -131,3 +131,9 @@
     transition: none;
   }
 }
+
+.hero-contact-panel {
+  position: relative;
+  z-index: 4;
+  margin-top: 24px;
+}
