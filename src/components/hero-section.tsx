@@ -114,13 +114,22 @@ function SystemsSculpture() {
             />
             <circle cx="300" cy="535" r="3" fill="#9aced9" />
           </m.g>
-          <circle cx="300" cy="300" r="47" fill="#101516" stroke="#63878e" />
-          <path
-            d="M277 314V286L301 314V286M309 314L320 286L331 314M313 305H327"
-            stroke="#deeff3"
-            strokeWidth="2.5"
-            strokeLinejoin="round"
-          />
+          <circle cx="300" cy="300" r="76" fill="#101516" stroke="#63878e" />
+          <text
+            textAnchor="middle"
+            fill="#edf2f3"
+            fontFamily="var(--display)"
+            fontSize="32"
+            fontWeight="500"
+            letterSpacing="-1"
+          >
+            <tspan x="300" y="294">
+              Nafis
+            </tspan>
+            <tspan x="300" y="330">
+              Anwar
+            </tspan>
+          </text>
         </svg>
       </m.div>
       <OrbitNodes />

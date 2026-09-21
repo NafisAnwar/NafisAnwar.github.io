@@ -1,6 +1,42 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Check, Copy } from "lucide-react";
-import { Reveal, ExternalLink, email, github } from "./shared";
+import {
+  ArrowUpRight,
+  Check,
+  Copy,
+  FileText,
+  Github,
+  Linkedin,
+  Mail,
+} from "lucide-react";
+import { Reveal, email, github, resume } from "./shared";
+import "../contact-panel.css";
+
+const contactLinks = [
+  {
+    label: "Industry resume",
+    detail: "Experience & qualifications",
+    href: resume,
+    icon: FileText,
+  },
+  {
+    label: "GitHub",
+    detail: "Code & ongoing projects",
+    href: github,
+    icon: Github,
+  },
+  {
+    label: "LinkedIn",
+    detail: "Professional profile",
+    href: "https://www.linkedin.com/in/nafisanwar/",
+    icon: Linkedin,
+  },
+  {
+    label: "Email",
+    detail: "Start a conversation",
+    href: "mailto:" + email,
+    icon: Mail,
+  },
+];
 
 export function ContactSection() {
   const [message, setMessage] = useState("");
@@ -19,56 +55,68 @@ export function ContactSection() {
     timeout.current = setTimeout(() => setMessage(""), 5000);
   };
   return (
-    <section id="contact" className="contact-section">
+    <section
+      id="contact"
+      className="contact-section"
+      aria-labelledby="contact-heading"
+    >
       <div className="section-shell">
         <Reveal>
           <p className="eyebrow">
-            <span>06 /</span> THE NEXT CHAPTER
+            <span>06 /</span> GET IN TOUCH
           </p>
-          <div className="contact-title-row">
-            <h2>
-              Have something
-              <br />
-              in mind<span className="accent">?</span>
+          <div className="connect-heading">
+            <h2 id="contact-heading">
+              Let’s connect<span className="accent">.</span>
             </h2>
-            <a
-              href={`mailto:${email}`}
-              className="contact-arrow"
-              aria-label="Email Nafis Anwar"
-            >
-              <ArrowUpRight />
-            </a>
+            <p>
+              My experience, my work, and a direct line to me.
+              <br />
+              Everything you need, in one place.
+            </p>
           </div>
-          <div className="contact-bottom">
-            <div>
-              <p>
-                A role, an idea, or an interesting problem.
-                <br />
-                I’d love to hear about it.
-              </p>
-              <div className="email-row">
-                <a href={`mailto:${email}`}>{email}</a>
-                <button
-                  className="icon-button"
-                  onClick={copy}
-                  aria-label="Copy email address"
+          <div className="connect-panel">
+            <nav
+              className="connect-links"
+              aria-label="Resume and contact links"
+            >
+              {contactLinks.map(({ label, detail, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="connect-link"
+                  {...(href.startsWith("mailto:")
+                    ? {}
+                    : { target: "_blank", rel: "noopener noreferrer" })}
                 >
-                  {message.startsWith("Email copied") ? (
-                    <Check size={18} />
-                  ) : (
-                    <Copy size={18} />
+                  <span className="connect-link-top">
+                    <Icon size={22} aria-hidden="true" />
+                    <ArrowUpRight size={19} aria-hidden="true" />
+                  </span>
+                  <span className="connect-link-label">{label}</span>
+                  <span className="connect-link-detail">{detail}</span>
+                  {!href.startsWith("mailto:") && (
+                    <span className="sr-only"> (opens in a new tab)</span>
                   )}
-                </button>
-              </div>
-              <p className="copy-status" role="status">
+                </a>
+              ))}
+            </nav>
+            <div className="connect-email">
+              <a href={"mailto:" + email}>{email}</a>
+              <button
+                className="icon-button"
+                onClick={copy}
+                aria-label="Copy email address"
+              >
+                {message.startsWith("Email copied") ? (
+                  <Check size={18} />
+                ) : (
+                  <Copy size={18} />
+                )}
+              </button>
+              <p className="connect-status" role="status">
                 {message}
               </p>
-            </div>
-            <div className="contact-socials">
-              <ExternalLink href={github}>GitHub</ExternalLink>
-              <ExternalLink href="https://www.linkedin.com/in/nafisanwar/">
-                LinkedIn
-              </ExternalLink>
             </div>
           </div>
         </Reveal>
