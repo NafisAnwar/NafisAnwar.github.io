@@ -52,7 +52,7 @@ export const experiences = [
     role: "Technical Marketing Lead",
     organization: "Google Developer Student Club at USF",
     location: "Tampa, FL",
-    date: "Jun 2025 - Nov 2025",
+    date: "May 2025 - Nov 2025",
     type: "Developer Community",
     tags: [
       "Technical Content",

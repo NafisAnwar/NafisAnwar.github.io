@@ -16,7 +16,7 @@ Source: NafisAnwar_Resume_VA_Technical__2026.pdf, supplied by Nafis.
 
 ## Decisions and useful follow-ups
 
-- Nafis confirmed the GDSC role ended in November 2025; updated its end date.
+- Nafis confirmed the developer-group marketing role ran from May through November 2025; aligned the portfolio dates with LinkedIn.
 - EventHub and InCollege are included without repository links, as requested by Nafis.
 - InCollege's README and Roles.txt at source commit 7a7eafd42d06621f165ae5f3462cf914b5dd1936 support rotating development, Scrum Master, and testing roles, plus Epic 7 acceptance results. These are recorded results, not suites rerun by this portfolio update.
 - Capture genuine EventHub, InCollege, and stock visualizer screenshots for future case studies. Current overview panels are labeled engineering notes, not application screenshots.
