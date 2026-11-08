@@ -12,6 +12,25 @@ import {
   useMotionPreference,
 } from "./shared";
 
+function ProjectVisual({ project }: { project: Project }) {
+  return project.image ? (
+    <img
+      src={project.image}
+      alt={`${project.title} preview`}
+      loading="lazy"
+      width="800"
+      height="500"
+    />
+  ) : (
+    <div className="project-summary-visual" aria-hidden="true">
+      <span className="mono">ENGINEERING NOTES / {project.category.toUpperCase()}</span>
+      <strong>{project.title}</strong>
+      <span>{project.subtitle}</span>
+      <span className="mono">{project.stack.slice(0, 3).join(" / ")}</span>
+    </div>
+  );
+}
+
 function ProjectDialog({
   project,
   close,
@@ -69,10 +88,7 @@ function ProjectDialog({
           <X />
         </button>
         <div className="dialog-image">
-          <img
-            src={project.image}
-            alt={`${project.title} project screenshot`}
-          />
+          <ProjectVisual project={project} />
         </div>
         <div className="dialog-copy">
           <p className="eyebrow">{project.category} / PROJECT OVERVIEW</p>
@@ -97,16 +113,18 @@ function ProjectDialog({
                 Open live app
               </ExternalLink>
             )}
-            <ExternalLink
-              href={`${github}/${project.repo}`}
-              className={
-                project.liveUrl
-                  ? "button button-quiet"
-                  : "button button-primary"
-              }
-            >
-              <Github size={17} /> Explore the code
-            </ExternalLink>
+            {project.repo && (
+              <ExternalLink
+                href={`${github}/${project.repo}`}
+                className={
+                  project.liveUrl
+                    ? "button button-quiet"
+                    : "button button-primary"
+                }
+              >
+                <Github size={17} /> Explore the code
+              </ExternalLink>
+            )}
             {project.relatedUrl && (
               <ExternalLink href={project.relatedUrl}>
                 Full-stack repository
@@ -187,13 +205,7 @@ export function ProjectsSection() {
                 onClick={() => setSelected(project)}
                 aria-label={`View ${project.title} details`}
               >
-                <img
-                  src={project.image}
-                  alt={`${project.title} preview`}
-                  loading="lazy"
-                  width="800"
-                  height="500"
-                />
+                <ProjectVisual project={project} />
                 <span className="image-open">
                   <ArrowUpRight size={20} />
                 </span>
@@ -224,9 +236,11 @@ export function ProjectsSection() {
                   >
                     Details <ArrowRight size={15} />
                   </button>
-                  <ExternalLink href={`${github}/${project.repo}`}>
-                    Source
-                  </ExternalLink>
+                  {project.repo && (
+                    <ExternalLink href={`${github}/${project.repo}`}>
+                      Source
+                    </ExternalLink>
+                  )}
                 </div>
               </div>
             </m.article>

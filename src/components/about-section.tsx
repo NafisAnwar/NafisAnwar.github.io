@@ -40,8 +40,9 @@ export function AboutSection() {
         </p>
         <p>
           My work moves between backend engineering, developer tooling, applied
-          AI, and robotics. At USF’s RARE Lab, I supported humanoid robotics
-          research with evaluation pipelines and reproducible experiments.
+          AI, and robotics. I now lead a four-student research team studying
+          AI-like content and human engagement. Previously, at USF’s RARE Lab,
+          I supported humanoid robotics research with reproducible experiments.
         </p>
         <p>
           Outside the code, I’ve helped build campus communities, led teams, and
@@ -50,12 +51,12 @@ export function AboutSection() {
         </p>
         <div className="about-stats">
           <div>
-            <strong>2027</strong>
+            <strong>May 2027</strong>
             <span>Expected graduation</span>
           </div>
           <div>
-            <strong>5+</strong>
-            <span>Major systems built</span>
+            <strong>4</strong>
+            <span>Students on my research team</span>
           </div>
         </div>
         <a

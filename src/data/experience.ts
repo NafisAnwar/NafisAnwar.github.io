@@ -1,5 +1,17 @@
 export const experiences = [
   {
+    role: "Undergraduate Research Team Lead",
+    organization: "Synthetic Content & Human Interaction Study, USF",
+    location: "Tampa, FL",
+    date: "Sep 2026 - Present",
+    type: "Research Leadership",
+    tags: ["Study Design", "Python", "TF-IDF", "MiniLM", "Conversation Analysis"],
+    bullets: [
+      "Lead a four-student research team studying AI-like content and human engagement across Reddit communities; established study protocols and coordinated archive acquisition, data cleaning, and methodological reviews.",
+      "Directed a 400-submission pre/post pilot spanning 15,741 comments and 10,142 reply edges; developed sampling and conversation-chain protocols and evaluated TF-IDF/MiniLM baselines while documenting observational limitations.",
+    ],
+  },
+  {
     role: "Junior Undergraduate Researcher",
     organization: "RARE Lab, University of South Florida",
     location: "Tampa, FL",
@@ -13,7 +25,7 @@ export const experiences = [
       "ASAP Framework",
     ],
     bullets: [
-      "Operate and maintain the Unitree G1 humanoid robot by configuring power-on sequences, scripts, evaluation harnesses, logging, configuration management, benchmarking, and regression checks to support safe and reproducible research experiments.",
+      "Operated and maintained the Unitree G1 humanoid robot by configuring startup procedures, scripts, evaluation harnesses, logging, benchmarking, and regression checks to support safe and reproducible research experiments.",
       "Conducted literature reviews on sim-to-real transfer techniques including physics mismatch mitigation, reward shaping strategies, and delta-action policies, compiling findings into technical summaries to inform experimental design.",
       "Analyzed research codebases, including the ASAP framework, to reproduce published results, trace training pipelines, identify policy learning and evaluation modules, and establish benchmarks for humanoid locomotion experiments.",
     ],
@@ -32,15 +44,15 @@ export const experiences = [
       "Community Support",
     ],
     bullets: [
-      "Built automated reporting and tracking systems for community metrics using Excel macros and ASP.NET Core; documented 18 conflict-resolution cases and 58 issue reports while supporting 500+ residents.",
-      "Fostered community engagement by organizing and facilitating 4 social and educational programs, averaging 20 attendees, and boosted floor participation by 36% for 34 residents within my community.",
+      "Built automated reporting and tracking workflows using Excel macros and ASP.NET Core; documented 30+ conflict-resolution cases and 70+ issue reports while supporting 500+ residents, streamlining reporting and follow-up.",
+      "Organized and facilitated 10+ social and educational programs, averaging 50+ attendees; increased floor participation by 78% among 34 residents through targeted outreach and community engagement.",
     ],
   },
   {
     role: "Technical Marketing Lead",
     organization: "Google Developer Student Club at USF",
     location: "Tampa, FL",
-    date: "Jun 2025 - Present",
+    date: "Jun 2025 - Nov 2025",
     type: "Developer Community",
     tags: [
       "Technical Content",

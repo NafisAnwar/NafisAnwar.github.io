@@ -17,7 +17,7 @@ Vite serves the site at http://127.0.0.1:3000. Use `npm run build` for type chec
 - `src/data/experience.ts`: roles, dates, and original experience descriptions.
 - `src/components`: individual sections and shared presentation components.
 - `src/index.css`: design tokens, layouts, and responsive styles.
-- `public/resume.pdf` and `public/research/`: existing résumé and research documents.
+- `public/nafisanwar_resume.pdf` and `public/research/`: résumé and research documents.
 
 Motion is the primary animation system. The original SVG systems sculpture supports pointer interaction and a pause control. Reduced-motion preferences disable continuous animation and movement. The layout uses native scrolling; project details use a native modal dialog with keyboard focus management. Project filters, experience disclosures, résumé links, email links, and copy-email controls work without a backend.
 

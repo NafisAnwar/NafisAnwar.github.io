@@ -90,4 +90,4 @@ export function ExternalLink({
 
 export const email = "anwarnafisneo@gmail.com";
 export const github = "https://github.com/NafisAnwar";
-export const resume = `${import.meta.env.BASE_URL}resume.pdf`;
+export const resume = `${import.meta.env.BASE_URL}nafisanwar_resume.pdf`;
