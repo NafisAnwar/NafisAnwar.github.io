@@ -27,6 +27,6 @@ Source: NafisAnwar_Resume_VA_Technical__2026.pdf, supplied by Nafis.
 
 Resume metrics are supplied claims, not measurements reproduced by this website update. EventHub's README records a November 4, 2026 baseline of 72 local passes plus one PostgreSQL-specific skip; CI covers concurrency and browser tests. This update does not rerun those separate projects' tests.
 
-The portfolio passed TypeScript checking and a Vite production build using its existing local dependency installation. The replacement public/resume.pdf has the same SHA-256 as the supplied PDF: 50380edcf99b30ed5f560ee65a24c2b710220597c618654f37aa61d784dafa6f.
+The portfolio passed TypeScript checking and a Vite production build using its existing local dependency installation. The replacement public/nafisanwar_resume.pdf has the same SHA-256 as the supplied PDF: 50380edcf99b30ed5f560ee65a24c2b710220597c618654f37aa61d784dafa6f.
 
 Browser QA passed at the normal desktop viewport and a 390-pixel mobile viewport. Verified the eleven-project gallery, Web apps filtering, EventHub and InCollege dialogs with zero code links, Escape dismissal, and the updated research layout without horizontal overflow. No browser console errors were recorded. No separate project test suites were rerun.
