@@ -21,20 +21,22 @@ export function SyntheticStudySection() {
             </span>
           </h2>
           <p>
-            Exploring the relationship between synthetic-like content and human
-            interaction in online communities.
+            I lead a four-student USF research team studying AI-like content and
+            human engagement across Reddit communities. Our current pre/post pilot
+            combines archive acquisition, data cleaning, conversation-chain
+            protocols, and TF-IDF/MiniLM baselines.
           </p>
           <p className="research-note">
-            A study combining NLP, embeddings, manual review, and
-            classifier-based analysis. Observational findings - not definitive
-            proof of AI authorship.
+            The pilot is observational: AI-like signals do not establish AI
+            authorship or causation. The linked paper documents an earlier study;
+            its dataset and classifier results are separate from this pilot.
           </p>
           <div className="research-links">
             <ExternalLink
               href={`${import.meta.env.BASE_URL}research/synthetic-content-human-interaction-paper.pdf`}
               className="button button-primary"
             >
-              Read the paper
+              Read the earlier paper
             </ExternalLink>
             <ExternalLink href="https://github.com/NafisAnwar/synthetic-content-human-interaction">
               View research code
@@ -52,15 +54,15 @@ export function SyntheticStudySection() {
               <span>01</span>
               <div>
                 <h3>Collect & clean</h3>
-                <p>A week-balanced Reddit dataset.</p>
+                <p>Archive acquisition and a 400-submission pre/post sample.</p>
               </div>
             </div>
             <div className="method-connector" />
             <div className="method-step">
               <span>02</span>
               <div>
-                <h3>Represent & classify</h3>
-                <p>NLP, embeddings, and manual labels.</p>
+                <h3>Represent & compare</h3>
+                <p>TF-IDF and MiniLM baselines with methodological review.</p>
               </div>
             </div>
             <div className="method-connector" />
@@ -68,22 +70,22 @@ export function SyntheticStudySection() {
               <span>03</span>
               <div>
                 <h3>Observe & interpret</h3>
-                <p>Engagement patterns across communities.</p>
+                <p>Conversation chains, reply edges, and observational limits.</p>
               </div>
             </div>
           </div>
           <div className="research-stats">
             <div>
-              <strong>7,606</strong>
-              <span>cleaned comments</span>
+              <strong>400</strong>
+              <span>pilot submissions</span>
             </div>
             <div>
-              <strong>12</strong>
-              <span>week study window</span>
+              <strong>15,741</strong>
+              <span>pilot comments</span>
             </div>
             <div>
-              <strong>0.849</strong>
-              <span>best ROC-AUC</span>
+              <strong>10,142</strong>
+              <span>pilot reply edges</span>
             </div>
           </div>
           <a
@@ -92,7 +94,7 @@ export function SyntheticStudySection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            EXPLORE THE METHODOLOGY <ArrowUpRight size={17} />
+            EARLIER STUDY / PAPER & METHODOLOGY <ArrowUpRight size={17} />
           </a>
         </Reveal>
       </div>

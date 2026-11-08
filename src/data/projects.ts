@@ -14,14 +14,40 @@ export interface Project {
   category: Category;
   description: string;
   stack: string[];
-  image: string;
-  repo: string;
+  image?: string;
+  repo?: string;
   liveUrl?: string;
   relatedUrl?: string;
   detail: string;
   outcome: string;
 }
 export const projects: Project[] = [
+  {
+    id: "eventhub",
+    title: "EventHub",
+    subtitle: "From architecture to release.",
+    category: "Web apps",
+    description:
+      "A co-developed Flask ticketing demo with simulated checkout, inventory safeguards, purchase auditing, and restricted administrator workflows.",
+    stack: ["Python", "Flask", "PostgreSQL", "Pytest", "Selenium"],
+    detail:
+      "Co-developed a modular ticketing demonstration with event discovery, currency conversion, simulated checkout, and inventory protection. Produced C4 architecture models, architectural decision records, test traceability, database migration checks, and release and rollback documentation. No real payments are collected or tickets issued.",
+    outcome:
+      "Recorded November 2026 verification: 72 passing local tests; GitHub Actions covered PostgreSQL concurrency and Selenium browser tests, with 87% application coverage.",
+  },
+  {
+    id: "incollege",
+    title: "InCollege",
+    subtitle: "Build together. Verify every step.",
+    category: "Systems",
+    description:
+      "A team-built COBOL student networking application with persistent profiles, connections, job listings, and application reports.",
+    stack: ["COBOL", "GnuCOBOL", "Python", "Acceptance Testing", "Scrum"],
+    detail:
+      "Contributed across developer, Scrum Master, and tester roles on Team Alaska. Implemented network display and connection handling in Epic 5, and job-field validation and persistent job records in Epic 6. As Epic 7 Tester #1, set up and executed independent acceptance tests covering job browsing, duplicate applications, per-user reports, restart persistence, and invalid input. Isolated fixtures protect stored data; every acceptance run compares console output byte-for-byte with the output file.",
+    outcome:
+      "Recorded Epic 7 results: 42/42 acceptance cases across 49 executions; the team’s historical and integration regression suite recorded 143/143 cases across 294 runs.",
+  },
   {
     id: "now-what",
     title: "now_what?",
@@ -34,9 +60,23 @@ export const projects: Project[] = [
     repo: "now-what",
     liveUrl: "https://now-what-app.anwarnafisneo.workers.dev/",
     detail:
-      "A complete planning and execution workspace with deterministic recommendations, state-aware prioritization, local persistence, daily reviews, reminders, calendar import, and offline app-shell support.",
+      "A local-first productivity PWA with deterministic, context-aware next-action recommendations and a debug panel to inspect suggestions. Tasks, habits, goals, calendar planning, daily reviews, and reminders persist through Dexie/IndexedDB. Offline service-worker caching, JSON import/export, cross-store integrity checks, and deterministic regression tests support reliability, with no server-side user-data collection.",
     outcome:
       "A working v1.2 beta: no account required, browser-local data, and a clear explanation behind the next action.",
+  },
+  {
+    id: "stock-analysis",
+    title: "Stock Analysis Visualizer",
+    subtitle: "Market data, made readable.",
+    category: "Systems",
+    description:
+      "A C# Windows Forms application for OHLC candlesticks and volume, with multi-CSV loading and responsive date-range refresh.",
+    stack: ["C#", ".NET WinForms", "CSV", "Data Validation"],
+    repo: "StockAnalysisProject",
+    detail:
+      "Built a Windows Forms application that binds Yahoo Finance CSV data directly to candlestick and volume chart series. Supports day, week, and month files, padded OHLC ranges, and indexed trading days to hide weekend and holiday gaps. A refresh pipeline updates the chart without reloading files, while parsing and validation checks handle malformed rows and missing values.",
+    outcome:
+      "Multiple datasets in separate windows, clearer trading-day charts, and refresh without reloading source files.",
   },
   {
     id: "gritvm",
@@ -59,12 +99,12 @@ export const projects: Project[] = [
     category: "Systems",
     description:
       "An educational cryptography platform connecting a native RSA engine to a full-stack web experience.",
-    stack: ["C#", "ASP.NET Core", "React", "P/Invoke"],
+    stack: ["C", "C#", "ASP.NET Core", "P/Invoke", "Docker"],
     image: rsa,
     repo: "RSACryptoFullStack",
     detail:
-      "An integrated RSA crypto engine with ASP.NET Core REST APIs and a React frontend. C# P/Invoke connects native operations to the application, with Docker packaging and automated testing.",
-    outcome: "30% faster operations reported in the original project.",
+      "Implemented key-generation, encryption, and signing flows using big-integer operations and modular arithmetic. Wrapped the native library in an ASP.NET Core backend through C# P/Invoke, with structured JSON requests and robust error handling. Docker packages the native build toolchain and runtime; documented client calls make the educational API reproducible across environments.",
+    outcome: "Profiled exponentiation strategies achieved 30% faster RSA operations than a baseline C# implementation.",
   },
   {
     id: "meditrends",
@@ -73,12 +113,12 @@ export const projects: Project[] = [
     category: "AI & data",
     description:
       "Semantic search and NLP analytics across 28,000+ Reddit posts from 18 communities.",
-    stack: ["Python", "FAISS", "TensorFlow", "PyTorch"],
+    stack: ["Python", "Flask", "FAISS", "TensorFlow", "PyTorch", "Selenium"],
     image: medi,
     repo: "MediTrends",
     detail:
-      "A Reddit analysis system that combines NLP workflows with FAISS vector search to explore trends across a large text corpus. The project connects data processing, text representations, and exploratory analytics.",
-    outcome: "Search and analysis over 28k+ posts across 18 communities.",
+      "Built FAISS-powered semantic search with batching and NLP pipelines for clustering and trend detection. Flask search/trending endpoints and a responsive Tailwind UI expose volume, growth, and sentiment KPIs. Separate ingestion, embedding, indexing, and API layers keep data sources manageable. Query-set checks, edge cases, performance regressions, and Selenium integration tests support retrieval and UI reliability.",
+    outcome: "Search over 28k+ posts across 18 communities, with 110 ms/query reported in project evaluation.",
   },
   {
     id: "spotify",

@@ -1241,6 +1241,32 @@ button {
 .experience-detail .tags > span {
   font-size: 9px;
 }
+/* Project overview panels for work without a published screenshot. */
+.project-summary-visual {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  height: 100%;
+  min-height: 170px;
+  padding: 22px;
+  text-align: left;
+  color: #dbeef2;
+  border: 1px solid #365158;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(135deg, #18363e, #0d191e 75%);
+}
+.project-summary-visual > strong {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.5vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+}
+.project-summary-visual > span { font-size: 12px; line-height: 1.5; color: #b2cdd3; }
+.project-summary-visual > .mono { font-size: 9px; letter-spacing: .04em; }
+.dialog-image:has(.project-summary-visual) { padding: 24px; }
+.dialog-image .project-summary-visual { min-height: 210px; border-radius: 6px; }
+
 /* Toolkit */
 .skills-section {
   padding-top: 15px;

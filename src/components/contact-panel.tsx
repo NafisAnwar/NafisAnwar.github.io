@@ -14,7 +14,7 @@ import "../contact-panel.css";
 const contactLinks = [
   {
     label: "Industry resume",
-    detail: "Experience & qualifications",
+    detail: "Updated November 2026 · PDF",
     href: resume,
     icon: FileText,
   },
